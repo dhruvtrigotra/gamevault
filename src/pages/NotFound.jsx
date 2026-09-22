@@ -1,0 +1,1 @@
+import {Button} from '../components/UI';export default function NotFound(){return <div className="not-found"><strong>404</strong><h1>Game over. Page not found.</h1><p>This level doesn’t exist. Let’s get you back in the game.</p><Button to="/">Return to home</Button></div>}
