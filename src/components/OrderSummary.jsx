@@ -1,0 +1,2 @@
+import {totals,money} from '../utils/shop';
+export default function OrderSummary({games,children}){const t=totals(games);return <aside className="panel summary"><h2>Order summary</h2><dl><div><dt>Subtotal ({games.length} games)</dt><dd>{money(t.subtotal)}</dd></div><div><dt>Discounts</dt><dd className="text-[#8cdbaf]">−{money(t.discount)}</dd></div><div><dt>Tax (demo)</dt><dd>{money(t.tax)}</dd></div><div className="total"><dt>Total</dt><dd>{money(t.total)}</dd></div></dl>{children}<small>USD · Demo checkout. You will not be charged.</small></aside>}

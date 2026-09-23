@@ -1,0 +1,2 @@
+import {useState} from 'react';import {useNavigate} from 'react-router-dom';import {Search} from 'lucide-react';
+export default function SearchBar(){const[q,setQ]=useState('');const navigate=useNavigate();return <form className="nav-search" onSubmit={e=>{e.preventDefault();navigate(`/store?q=${encodeURIComponent(q)}`)}} role="search"><Search size={17}/><input aria-label="Search games" placeholder="Search games…" value={q} onChange={e=>setQ(e.target.value)}/><kbd>↵</kbd></form>}
