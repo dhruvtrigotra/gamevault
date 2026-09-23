@@ -1,0 +1,2 @@
+import {useState,useEffect} from 'react';
+export function useStorage(key, initial, storage=localStorage) { const [value,setValue]=useState(()=>{try{return JSON.parse(storage.getItem(key))??initial}catch{return initial}}); useEffect(()=>{try{storage.setItem(key,JSON.stringify(value))}catch{ /* The current session remains usable if storage is unavailable. */ }},[key,value,storage]);return [value,setValue]; }
